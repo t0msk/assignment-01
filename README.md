@@ -35,12 +35,12 @@ Tests are located under the folder **src/tests/** and there is already an exampl
 
 There are some helpful scripts for you. Make sure to run them all before submitting and make sure they all pass.
 
-- `yarn lint` - Run linter for static analysis
-- `yarn typecheck` - Run typescript validation
-- `yarn prettify` - Fix styling of code using prettier
-- `yarn prettify-check` - Check styling of code using prettier
-- `yarn test` - Run unit tests using jest
-- `yarn verify` - Custom verification
+-   `yarn lint` - Run linter for static analysis
+-   `yarn typecheck` - Run typescript validation
+-   `yarn prettify` - Fix styling of code using prettier
+-   `yarn prettify-check` - Check styling of code using prettier
+-   `yarn test` - Run unit tests using jest
+-   `yarn verify` - Custom verification
 
 ## Submitting your code
 

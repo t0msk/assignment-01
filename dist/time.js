@@ -1,8 +1,4 @@
-<html>
-    <head>
-        <script>
-            var exports = {};
-            "use strict";
+"use strict";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.convertSecondsToTimeUnits = void 0;
@@ -26,20 +22,21 @@ const convertSecondsToTimeUnits = (numOfSecondsString) => {
     if (seconds == 0) {
         return '0 seconds';
     }
-    let returnString = '';
+    let returnString;
+    returnString = '';
     // array of objets which holds certain time objects used in calculations
     const units = [
-        { "seconds": 1, "name": "second" },
-        { "seconds": 60, "name": "minute" },
-        { "seconds": 3600, "name": "hour" },
-        { "seconds": 86400, "name": "day" }
+        { seconds: 1, name: 'second' },
+        { seconds: 60, name: 'minute' },
+        { seconds: 3600, name: 'hour' },
+        { seconds: 86400, name: 'day' },
     ];
     // get biggest time object as first in array
     let biggestUnit = units[0];
     // loop if there is remaining time (more than 1 minute)
     while (seconds >= 60) {
         // get biggest time object based on seconds
-        units.forEach(unit => {
+        units.forEach((unit) => {
             if (seconds >= unit.seconds) {
                 biggestUnit = unit;
             }
@@ -51,12 +48,16 @@ const convertSecondsToTimeUnits = (numOfSecondsString) => {
         seconds -= partialResult;
         seconds = Math.ceil(seconds * biggestUnit.seconds);
         // format output
-        returnString += (returnString == '' ? '' : ' and ') + partialResult + ' ' + formatUnits(biggestUnit.name, partialResult);
+        returnString +=
+            (returnString === '' ? '' : ' and ') +
+                partialResult +
+                ' ' +
+                formatUnits(biggestUnit.name, partialResult);
     }
     // if there are any seconds left, then format them and display them
     if (seconds > 0) {
         seconds = Math.floor(seconds);
-        if (returnString != '') {
+        if (returnString !== '') {
             returnString += ' and ';
         }
         returnString += seconds + (seconds == 1 ? ' second' : ' seconds');
@@ -65,15 +66,3 @@ const convertSecondsToTimeUnits = (numOfSecondsString) => {
     return returnString;
 };
 exports.convertSecondsToTimeUnits = convertSecondsToTimeUnits;
-
-
-
-
-
-
-        </script>
-    </head>
-    <body>
-
-    </body>
-</html>
